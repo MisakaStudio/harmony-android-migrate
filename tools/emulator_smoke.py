@@ -90,7 +90,9 @@ def main():
             root = Path(temporary)
             backup = make_backup(root, mms=True, duplicates=True, split=True)
             convert(backup, root / "converted", password=PASSWORD)
-            document = json.loads((root / "converted/migration.json").read_text())
+            document = json.loads(
+                (root / "converted/migration.json").read_text(encoding="utf-8")
+            )
             nonce = uuid.uuid4().hex
             delta = int(time.time() * 1000) - 7 * 86400000 - 1700000000123
             for kind, records in document["records"].items():

@@ -26,7 +26,9 @@ class ConversionTests(unittest.TestCase):
                 target_samples=[root / "sample/migration.json"],
             )
             self.assertEqual(report["output_format"], "native")
-            data = json.loads((root / "result/migration.json").read_text())
+            data = json.loads(
+                (root / "result/migration.json").read_text(encoding="utf-8")
+            )
             self.assertEqual(len(data["records"]["sms"]), 1)
             self.assertEqual(len(data["records"]["calls"]), 1)
 
@@ -59,7 +61,7 @@ class ConversionTests(unittest.TestCase):
                         call_rows[0].get("subscription_id"), "account-alpha"
                     )
                     for artifact in output.iterdir():
-                        data = artifact.read_text()
+                        data = artifact.read_text(encoding="utf-8")
                         self.assertNotIn("Synthetic example only", data)
                         self.assertNotIn("+15550000001", data)
 
@@ -96,7 +98,9 @@ class ConversionTests(unittest.TestCase):
             root = Path(temporary)
             source = make_backup(root, mms=True, duplicates=True, split=True)
             report = convert(source, root / "result", password=PASSWORD)
-            data = json.loads((root / "result/migration.json").read_text())
+            data = json.loads(
+                (root / "result/migration.json").read_text(encoding="utf-8")
+            )
             self.assertEqual(report["counts"], {"sms": 2, "calls": 1, "mms": 1})
             self.assertEqual(
                 data["records"]["sms"][0]["values"]["body"], "合成消息 <&>\n🙂"
@@ -182,9 +186,9 @@ class ConversionTests(unittest.TestCase):
             )
             self.assertFalse(report["complete"])
             self.assertFalse(
-                json.loads((root / "allowed/migration.json").read_text())["conversion"][
-                    "complete"
-                ]
+                json.loads(
+                    (root / "allowed/migration.json").read_text(encoding="utf-8")
+                )["conversion"]["complete"]
             )
 
     def test_rcs_not_silently_dropped(self):
