@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 私密报告安全漏洞
+    url: https://github.com/MisakaStudio/harmony-android-migrate/security/advisories/new
+    about: 不要将漏洞细节或通信数据提交到公开 Issue

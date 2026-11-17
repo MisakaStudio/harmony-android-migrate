@@ -1,0 +1,34 @@
+name: 迁移问题
+description: 提交脱敏错误、机型和版本信息
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "请勿上传真实短信、号码、ICCID、备份、密码或完整报告。安全漏洞请使用 Security → Report a vulnerability。"
+  - type: checkboxes
+    attributes:
+      label: 隐私检查
+      options:
+        - label: 我确认以下内容不含真实通信记录、完整设备标识或密钥
+          required: true
+  - type: textarea
+    attributes:
+      label: 设备与版本
+      description: 源机型、系统完整版本、备份应用版本；目标机型、Android/ROM版本；电脑系统；工具版本及普通版/USB版
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: 发生阶段
+      options: [解密或转换, 目标样本识别, SIM映射, USB传入, 权限或默认短信, 预检查或写入, 卡标签显示, 恢复默认应用或清理]
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 复现步骤与预期结果
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 脱敏错误码与数量
+      description: 只提供错误码、各类别条数、是否中断；不要粘贴正文、完整日志或上传原始文件

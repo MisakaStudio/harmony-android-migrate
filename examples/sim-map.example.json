@@ -1,0 +1,23 @@
+{
+  "schema": "hmos-migrate/sim-map",
+  "version": 1,
+  "allow_merge": false,
+  "slots": {
+    "0": {
+      "sub_id": 101,
+      "phone_account": {
+        "id": "account-alpha",
+        "component": "com.example.phone/.ConnectionService",
+        "user_id": 0
+      }
+    },
+    "1": {
+      "sub_id": 203,
+      "phone_account": {
+        "id": "account-beta",
+        "component": "com.example.phone/.ConnectionService",
+        "user_id": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+name: 兼容性报告
+description: 记录真实机型的成功范围或不兼容点
+title: "[Compatibility] "
+body:
+  - type: markdown
+    attributes:
+      value: "模拟器结果不能代替实体机结果。请提供匿名统计，勿上传通信备份或带号码截图。"
+  - type: textarea
+    attributes:
+      label: 环境
+      description: 源与目标机型、系统和备份应用版本、工具版本、导入路径
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 已验证的范围
+      description: 短信/通话/彩信条数、双卡字段和实际界面标签、重跑是否重复、原短信应用是否恢复
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 未验证项与失败错误码

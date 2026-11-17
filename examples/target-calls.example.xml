@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Synthetic format sample. The phone account ID is intentionally not the SMS sub_id. -->
+<calls count="1" backup_set="synthetic-example" backup_date="1700000000000">
+  <call number="+15550000001" date="1700000000000" duration="5" type="2" presentation="1" subscription_id="account-alpha" subscription_component_name="com.example.phone/.ConnectionService" />
+</calls>

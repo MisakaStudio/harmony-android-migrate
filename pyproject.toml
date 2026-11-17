@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harmony-android-migrate"
+dynamic = ["version"]
+description = "Local HarmonyOS backup conversion and Android SMS/call migration"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["cryptography>=43,<51"]
+
+[project.scripts]
+hmos-migrate = "hmos_migrate.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "hmos_migrate.__version__"}

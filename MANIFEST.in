@@ -1,0 +1,8 @@
+include README.md LICENSE CHANGELOG.md CONTRIBUTING.md SECURITY.md PRIVACY.md
+recursive-include docs *.md
+recursive-include docs *.png *.txt
+recursive-include examples *.json *.xml
+recursive-include tests *.py
+recursive-include tools *.py
+recursive-include android *.java *.xml
+global-exclude *.pyc *.jks *.keystore *.db *.apk

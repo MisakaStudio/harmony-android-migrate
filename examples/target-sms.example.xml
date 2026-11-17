@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Synthetic format sample. Do not import this example as real communication history. -->
+<smses count="1" backup_set="synthetic-example" backup_date="1700000000000">
+  <sms address="+15550000001" date="1700000000000" type="1" read="1" body="Synthetic example only" sub_id="101" />
+</smses>
